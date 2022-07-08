@@ -1,0 +1,405 @@
+
+
+ 
+ Object Oriented Programming
+    Class and Object
+	  Class=> Its a template/blueprint/planning
+	  public class Hello{
+	  
+	  }
+	  Creating a class is not enough. We have to go 
+	  for creating object. Object is an instance of a class. Object brings Class into
+	  existence.
+	  
+	  Hello hlo=new Hello();
+	  
+	  Line 14 is combination of two things:
+	  
+	  Hello hlo; We have created a reference of Hello type and reference name is hlo.
+	  hlo=new Hello();  // With new Hello() we are creating the object during the runtime
+	                    // and here the address of newly created object is stored in the reference hlo.
+						
+	
+	Within a class we have instance variables and methods.
+	
+	public class Hello{
+	String message;  // attribute/instance variables
+	
+	}
+	
+	public class HelloMain{
+	  public static void main(String args[]){
+	   Hello hel=new Hello();
+	   System.out.println(hel.message); // null
+	   hel.message="Hello Friends";
+	   }
+	   }
+	   
+	  The above two classes are in the same default package
+	  ( We have declared any package). That is the reason
+	  we are able to access message which is having the 
+	  default or package specific access specifier.
+	  
+	  
+	  
+	public class Hello{
+	private String message;  // attribute/instance variables
+	
+	// The setMessage and getMessage are two member methods Hello class
+	public void setMessage(String message){
+	this.message=message;
+	}
+	
+	public String getMessage(){
+	return message;
+	}
+	
+	
+	}
+	
+	public class HelloMain{
+	  public static void main(String args[]){
+	   Hello hel=new Hello();
+	  // System.out.println(hel.message); 
+	  // hel.message="Hello Friends";
+	  // We cannot write above two lines as message in now private
+	    hel.setMessage("Hello Friends");  // arguement to the method
+		String msg=hel.getMessage();
+		System.out.println(msg);
+	   }
+	   }
+-----------------------------------------------------------------------------
+	   public class Customer {
+	private String customerId;
+	private String customerName;
+	private long contactNumber;
+	private String address;
+
+	public void displayCustomerDetails() {
+		System.out.println("Displaying customer details \n***********");
+		System.out.println("Customer Id : " + customerId);
+		System.out.println("Customer Name : " + customerName);
+		System.out.println("Contact Number : " + contactNumber);
+		System.out.println("Address : " + address);
+		System.out.println();
+	}
+
+	public static void main(String args[]) {
+		Customer customer = new Customer();
+		customer.customerId = "C101";
+		customer.customerName = "Stephen Abram";
+		customer.contactNumber = 7856341287L;
+		customer.address = "D089, St. Louis Street, Springfield, 62729";
+		customer.displayCustomerDetails();
+	}
+
+}
+---------------------------------------------------------------------------------
+public class Customer1 {
+	private String customerId;
+	private String customerName;
+	private long contactNumber;
+	private String address;
+
+	public void displayCustomerDetails() {
+		System.out.println("Displaying customer details \n***********");
+		System.out.println("Customer Id : " + customerId);
+		System.out.println("Customer Name : " + customerName);
+		System.out.println("Contact Number : " + contactNumber);
+		System.out.println("Address : " + address);
+		System.out.println();
+	}
+}
+
+
+public class CustomerMain1 {
+
+	public static void main(String args[]) {
+		Customer1 customer = new Customer1();
+		/*
+		 * customer.customerId = "C101"; customer.customerName = "Stephen Abram";
+		 * customer.contactNumber = 7856341287L; customer.address =
+		 * "D089, St. Louis Street, Springfield, 62729";
+		 */
+		customer.displayCustomerDetails();
+	}
+}
+-----------------------------------------------------------------------------------------
+
+public class Customer1 {
+	private String customerId;
+	private String customerName;
+	private long contactNumber;
+	private String address;
+
+	public void displayCustomerDetails() {
+		System.out.println("Displaying customer details \n***********");
+		System.out.println("Customer Id : " + customerId);
+		System.out.println("Customer Name : " + customerName);
+		System.out.println("Contact Number : " + contactNumber);
+		System.out.println("Address : " + address);
+		System.out.println();
+	}
+	
+	/*
+	 * public void payBill(double totalPrice, double discountPercentage) {
+	 * System.out.println("Calculating final amount to be paid......"); double
+	 * priceAfterDiscount = totalPrice * (1 - (discountPercentage / 100));
+	 * System.out.println("Hi " + customerName +
+	 * ", your final bill amount after discount is: " + (int) (priceAfterDiscount *
+	 * 100) / 100.0); }
+	 */
+
+	
+	public double payBill(double totalPrice, double discountPercentage) {
+		System.out.println("Calculating final amount to be paid.....");
+		double priceAfterDiscount = totalPrice * (1 - (discountPercentage / 100));
+		return priceAfterDiscount;
+	}
+
+}
+
+
+public class CustomerMain1 {
+
+	public static void main(String args[]) {
+		Customer1 customer = new Customer1();
+		/*
+		 * customer.customerId = "C101"; customer.customerName = "Stephen Abram";
+		 * customer.contactNumber = 7856341287L; customer.address =
+		 * "D089, St. Louis Street, Springfield, 62729";
+		 */
+		customer.displayCustomerDetails();
+			//customer.payBill(500, 10);
+		double totalBill=customer.payBill(500, 10);
+		System.out.println(totalBill);
+	}
+}
+--------------------------------------------------------------
+public class Customer2 {
+	public String customerId;
+	public String customerName;
+	public long contactNumber;
+	public String address;
+	
+	
+	public void updateContactNumber(Customer2 customer)
+	{
+		customer.contactNumber=0;
+	}
+	
+
+
+}
+
+
+
+public class CustomerMain2 {
+
+	public static void main(String args[]) {
+		Customer2 customer = new Customer2();
+		
+		  customer.customerId = "C101"; customer.customerName = "Stephen Abram";
+		  customer.contactNumber = 7856341287L; customer.address =
+		  "D089, St. Louis Street, Springfield, 62729";
+		 System.out.println(customer.contactNumber);
+		 //customer.updateContactNumber(customer);
+		 customer.contactNumber=0;
+		 System.out.println(customer.contactNumber);
+	}
+}
+-------------------------------------------------------------------------------
+
+One reference variable can point to one and only one object at a time.
+
+public class Employee{}
+
+Employee emp=new Employee();   
+// the above statement is creating a reference emp in which we are storing the address
+// of the object created in the RHS of the statement.
+emp=new Employee();
+// Now the reference variable is pointing to a new object. It is not pointing to the
+// object which got created previously.
+
+
+
+
+One object can be referenced by multiple reference variables at any given point of time.
+
+public class Employee{}
+
+Employee emp1=new Employee();
+Employee emp2=emp1;
+Employee emp3=emp1;
+// The address of the object created is stored emp1,emp2 and emp3.
+--------------------------------------------------------------------------------------
+class Calculator {
+
+   int result=num1+num2;
+   }
+  
+// The above code is not correct as we are trying to write a executable line
+// outside a method.
+  
+  class Calculator {
+    private int num1;
+	private int num2;
+	private int result;
+	
+	public void setData(){
+	
+	}
+}
+
+class Calculator {
+
+    public double findAverage(int number1,int number2,int number3){
+        // the code here	
+	}
+}
+ ----------------------------------------------------------------------------------------- 
+ public class Book1 {
+
+	private int id;
+	private String title;
+	private float price;
+	private float discount;
+	public void setData(int id,String title, float price,float discount)
+	{
+		this.id=id;
+		this.title=title;
+		this.discount=discount;
+	}
+	
+	public void dispData() {
+		System.out.println(id);
+		System.out.println(title);
+		System.out.println(discount);
+	}
+}
+
+
+public class BookMain1 {
+
+	public static void main(String[] args) {
+		Book1 book=new Book1();
+		book.setData(1, "Spring", 500, 0.5f);
+		book.dispData();
+	}
+
+}
+
+ 
+ 
+ 
+ Encapsulation is one of the feature of Object Oriented Programming.
+ 
+ To have setter and getter for the attributes in a class.
+ 1) Right click on the code editor after writing the instance variable.
+ 2) Select Source===> Generate setters and getters
+ 
+ 
+public class Book2 {
+
+	private int id;
+	private String title;
+	private float price;
+	private float discount;
+	private String author;
+	public String getAuthor() {
+		return author;
+	}
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public float getPrice() {
+		return price;
+	}
+	public void setPrice(float price) {
+		this.price = price;
+	}
+	public float getDiscount() {
+		return discount;
+	}
+	public void setDiscount(float discount) {
+		this.discount = discount;
+	}
+	
+}
+
+-------------------------------------
+
+public class Book2 {
+
+	private int id;
+	private String title;
+	private float price;
+	private float discount;
+	private String author;
+	public String getAuthor() {
+		return author;
+	}
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public float getPrice() {
+		return price;
+	}
+	public void setPrice(float price) {
+		this.price = price;
+	}
+	public float getDiscount() {
+		return discount;
+	}
+	public void setDiscount(float discount) {
+		this.discount = discount;
+	}
+	
+}
+
+
+
+public class BookMain2 {
+
+	public static void main(String[] args) {
+		Book2 book1=new Book2();
+		book1.setId(1);
+		book1.setTitle("Hibernate");
+		book1.setPrice(500);
+		book1.setDiscount(0.5f);
+		book1.setAuthor("Nick");
+		Book2 book2=new Book2();
+		book2.setId(2);
+		book2.setTitle("Java");
+		book1.setPrice(200);
+		book1.setAuthor("John");
+		System.out.println(book1.getId());
+		System.out.println(book1.getTitle());
+		
+	}
+
+}
