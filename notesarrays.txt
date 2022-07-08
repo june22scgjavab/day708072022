@@ -32,4 +32,13 @@ int num[]={22,5,6,7,8};
 // Array declaration and initialisation ... 
 The array subscript starts with 0.
 ------------------------------------------------------------------------------------
+int num[][]=new int[3][2];
+// 3 rows
+// 2 columns
+------------------------------------------------------------------------------
 
+
+How to pass command line arguements to the main method?
+Right click on the code editor===> Run as ====> Run configuration
+* Select arguements tab
+* click on run
