@@ -1,0 +1,71 @@
+public class ValidateLength {
+	public boolean lengthMoreThan8Character(String str) {
+		if(str.length()>8){
+			return true;
+			}
+			return false;
+	}
+}
+
+public class StringExercise1 {
+	public static void main(String[] args) {
+	   String str="Welcome";
+	   ValidateLength valid=new ValidateLength();
+	   if(valid.lengthMoreThan8Character(str))
+	   {
+		   System.out.println("Valid");
+	   }
+	   else
+	   {
+		   System.out.println("Invalid");
+	   }
+	}
+}
+-------------------------------------------------------------------------------------------
+
+
+* If str1 is equivalent in length to that of str2 . Concat str2 to str1 and display 
+otherwise display str2.
+Testcase1
+String str1="hello";
+String str2="hi";
+hi
+Testcase2
+String str1="hello";
+String str2="world";
+helloworld
+
+String result="";
+if(str1.length()==str2.length()){
+  result=str1+str2;
+  }
+ else{
+ result=str2;
+ }
+System.out.println(result);
+
+
+-------------------------------------------------------------------------------------------
+If two Strings are equal concat the strings and display the length of the 
+concatenated string otherwise display the length of the smallest String. 
+---------------------------------------------------------------------------------------------
+Hello
+Hello
+10
+Hello
+Hi
+2
+----------------------------------------------------------------------------------
+Enter a string and check whether the string is in lowercase , if is in lowercase convert
+it into uppercase and vice-versa.
+-------------------------------------------------------------------------------
+Display the characters of a string vertically
+String str="Welcome";
+W
+e
+l
+c
+o  
+m  
+e  
+-------------------------------------------------------------------
