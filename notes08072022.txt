@@ -403,3 +403,13 @@ public class BookMain2 {
 	}
 
 }
+// Literal or constants
+
+int num=10;
+// num is a variable and 10 is a int literal or constants
+String name="Ravi";
+// Ravi is a string literal
+
+String str="Ravi"; // prefered
+String str=new String("Ravi");
+
