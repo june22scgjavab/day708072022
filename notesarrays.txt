@@ -1,0 +1,35 @@
+// Without array for marks
+public class Student{
+private int roll;
+private String name;
+private int marks1;
+private int marks2;
+private int marks3;
+}
+
+// With array for marks
+public class Student{
+private int roll;
+private String name;
+private int marks[]=new int[3];
+}
+
+
+  int marks[]; // We are declaring an array of int type
+  marks=new int[3]; // The size of the newly created Array will be of 3.
+      // Single dimensional array
+-----------------------------------------------------------------------------------------	  
+	  foreach loop is for accessing only 
+	  
+	  for(datatype var/ref : array){
+	    System.out.println(var/ref);
+	  }
+-------------------------------------------------------------------------------
+int num[]=new int[3]; // Array declaration and initialisation
+// here the array elements are initialised with 0.
+---------------------------------------------------------------------------------
+int num[]={22,5,6,7,8};
+// Array declaration and initialisation ... 
+The array subscript starts with 0.
+------------------------------------------------------------------------------------
+
